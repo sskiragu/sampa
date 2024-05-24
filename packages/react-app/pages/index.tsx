@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
 
+import Product from "@/components/Product";
+
 export default function Home() {
     const [userAddress, setUserAddress] = useState("");
     const [isMounted, setIsMounted] = useState(false);
@@ -23,7 +25,7 @@ export default function Home() {
     return (
         <div className="flex flex-col justify-center items-center">
             <div className="h1">
-                There you go... a canvas for your next Celo project!
+                <Product />
             </div>
             {isConnected ? (
                 <div className="h2 text-center">
