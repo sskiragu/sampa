@@ -18,7 +18,7 @@ export default function Header() {
     }, []);
 
     return (
-        <Disclosure as="nav" className="bg-prosperity border-b border-black">
+        <Disclosure as="nav" className="bg-white-500 border-b border-black">
             {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -49,7 +49,7 @@ export default function Header() {
                                         src="/logo.svg"
                                         width="24"
                                         height="24"
-                                        alt="Celo Logo"
+                                        alt="Sampa Logo"
                                     />
                                 </div>
                                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -57,18 +57,33 @@ export default function Header() {
                                         href="#"
                                         className="inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-medium text-gray-900"
                                     >
-                                        Home
+                                        Products
+                                    </a>
+                                    <a
+                                        href="#"
+                                        className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900"
+                                    >
+                                        Services
                                     </a>
                                 </div>
                             </div>
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                                 {!hideConnectBtn && (
-                                    <ConnectButton
-                                        showBalance={{
-                                            smallScreen: true,
-                                            largeScreen: false,
-                                        }}
-                                    />
+                                    <>
+                                        <ConnectButton
+                                            showBalance={{
+                                                smallScreen: true,
+                                                largeScreen: false,
+                                            }}
+                                        />
+                                        {/* Add login and signup buttons/links here */}
+                                        <button className="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded">
+                                            Login
+                                        </button>
+                                        <button className="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded">
+                                            Sign Up
+                                        </button>
+                                    </>
                                 )}
                             </div>
                         </div>
@@ -81,7 +96,14 @@ export default function Header() {
                                 href="#"
                                 className="block border-l-4 border-black py-2 pl-3 pr-4 text-base font-medium text-black"
                             >
-                                Home
+                                Product
+                            </Disclosure.Button>
+                            <Disclosure.Button
+                                as="a"
+                                href="#"
+                                className="block py-2 pl-3 pr-4 text-base font-medium text-black"
+                            >
+                                Services
                             </Disclosure.Button>
                             {/* Add here your custom menu elements */}
                         </div>
