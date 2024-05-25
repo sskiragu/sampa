@@ -78,10 +78,7 @@ export default function Header() {
                                         />
                                         {/* Add login and signup buttons/links here */}
                                         <button className="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded">
-                                            Login
-                                        </button>
-                                        <button className="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded">
-                                            Sign Up
+                                            Sell Product
                                         </button>
                                     </>
                                 )}
