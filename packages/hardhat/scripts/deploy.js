@@ -7,21 +7,14 @@
 const hre = require("hardhat");
 
 async function main() {
-    const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-    const SIXTY_SECS = 60;
-    const unlockTime = currentTimestampInSeconds + SIXTY_SECS;
+    // Deploying ProductRegistry contract
+    const ProductRegistry = await hre.ethers.getContractFactory("ProductRegistry");
+    const productRegistry = await ProductRegistry.deploy();
 
-    const lockedAmount = hre.ethers.utils.parseEther("0.0001");
-
-    const Lock = await hre.ethers.getContractFactory("Lock");
-    const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
-
-    console.log(`Unlock Time: ${unlockTime}`);
-
-    await lock.deployed();
+    await productRegistry.deployed();
 
     console.log(
-        `Lock with 0.0001 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
+        `ProductRegistry deployed to: ${productRegistry.address}`
     );
 }
 
