@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useReadContract } from 'wagmi'; // Import the useReadContract hook
 
-const CONTRACT_ADDRESS = '0xBc85eAFee9c8F140c2D8B786775846191e9Fe88D';
+const CONTRACT_ADDRESS = '0x990546E9AC130bC21d56c6E6EE8D0671a1200CC1';
 const CONTRACT_ABI = [
   {
     "anonymous": false,
@@ -22,6 +22,18 @@ const CONTRACT_ABI = [
         "indexed": false,
         "internalType": "string",
         "name": "description",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "price",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "imageUrl",
         "type": "string"
       },
       {
@@ -57,6 +69,18 @@ const CONTRACT_ABI = [
       },
       {
         "indexed": false,
+        "internalType": "uint256",
+        "name": "price",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "imageUrl",
+        "type": "string"
+      },
+      {
+        "indexed": false,
         "internalType": "address",
         "name": "owner",
         "type": "address"
@@ -75,6 +99,16 @@ const CONTRACT_ABI = [
       {
         "internalType": "string",
         "name": "_description",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_price",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_imageUrl",
         "type": "string"
       }
     ],
@@ -102,6 +136,16 @@ const CONTRACT_ABI = [
           {
             "internalType": "string",
             "name": "description",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "price",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "imageUrl",
             "type": "string"
           },
           {
@@ -143,6 +187,16 @@ const CONTRACT_ABI = [
           {
             "internalType": "string",
             "name": "description",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "price",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "imageUrl",
             "type": "string"
           },
           {
@@ -211,6 +265,16 @@ const CONTRACT_ABI = [
         "type": "string"
       },
       {
+        "internalType": "uint256",
+        "name": "price",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "imageUrl",
+        "type": "string"
+      },
+      {
         "internalType": "address",
         "name": "owner",
         "type": "address"
@@ -235,6 +299,16 @@ const CONTRACT_ABI = [
         "internalType": "string",
         "name": "_description",
         "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_price",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_imageUrl",
+        "type": "string"
       }
     ],
     "name": "updateProduct",
@@ -249,7 +323,8 @@ interface Product {
   id: number;
   name: string;
   description: string;
-  // Add other properties as necessary
+  price: number; // Add other properties as necessary
+  imageUrl: string;
 }
 
 function ProductList() {
@@ -263,15 +338,18 @@ function ProductList() {
   const productList = (result.data as Product[]) || [];
 
   return (
-    <div>
-      <h1>Display Products</h1>
-      <ul>
+    <div className="max-w-6xl mx-auto p-6">
+      <h1 className="text-3xl font-semibold text-center mb-8">Display Products</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {productList.map((product) => (
-          <li key={product.id}>
-            {product.name} - ${product.description}
-          </li>
+          <div key={product.id} className="border border-gray-300 rounded-lg p-4 bg-white shadow-md">
+            <img src={product.imageUrl} alt={product.name} className="w-full h-48 object-cover rounded-t-lg mb-4" />
+            <h2 className="text-xl font-bold mb-2">{product.name}</h2>
+            <p className="text-gray-700 mb-4">{product.description}</p>
+            <p className="text-gray-900 font-semibold">${product.price}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
