@@ -1,197 +1,89 @@
-<!-- TITLE -->
-<p align="center"> 
-  <img width="100px" src="https://github.com/celo-org/celo-composer/blob/main/images/readme/celo_isotype.svg" align="center" alt="Celo" />
- <h2 align="center">Celo Composer</h2>
- <p align="center">Build, deploy, and iterate quickly on decentralized applications using Celo.</p>
-</p>
-  <p align="center">
-    <a href="https://github.com/celo-org/celo-composer/graphs/stars">
-      <img alt="GitHub Contributors" src="https://img.shields.io/github/stars/celo-org/celo-composer?color=FCFF52" />
-    </a>
-    <a href="https://github.com/celo-org/celo-composer/graphs/contributors">
-      <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/celo-org/celo-composer?color=E7E3D4" />
-    </a>
-    <a href="https://github.com/celo-org/celo-composer/issues">
-      <img alt="Issues" src="https://img.shields.io/github/issues/celo-org/celo-composer?color=E7E3D4" />
-    </a>
-    <a href="https://github.com/celo-org/celo-composer/pulls">
-      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/celo-org/celo-composer?color=E7E3D4" />
-    </a>
-    <a href="https://opensource.org/license/mit/">
-      <img alt="MIT License" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-    </a>
-  </p>
-</p>
+# Mobile IT Shop on the Blockchain
 
-<!-- TABLE OF CONTENTS -->
+## Project Description
+This project aims to create an innovative mobile-first e-commerce platform that specializes in IT products and services. Leveraging Celo's blockchain technology, this platform offers a secure, transparent, and efficient shopping experience specifically designed for mobile users. This initiative is part of the Build with Celo Hackathons, focusing on enriching the ecosystem with creative and impactful mobile dApps.
 
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
+## Key Features
+- **Mobile-First Design**: Intuitive and responsive design optimized for mobile devices, ensuring smooth navigation and a seamless user experience on smartphones.
+- **Product Listings**: Comprehensive catalog of IT products, including hardware and software, with detailed product pages, specifications, reviews, and ratings.
+- **Shopping Cart and Checkout**: User-friendly shopping cart allowing customers to add, remove, and modify items effortlessly, with a seamless checkout process integrated with MiniPay for secure transactions using Celo currency (cUSD).
+- **User Authentication**: Secure user registration and login system using blockchain for identity verification, along with user profiles for managing orders and viewing purchase history.
+- **Order Management**: Real-time order tracking and management for users and administrators, with smart contracts automating order processing to ensure transparency and reduce fraud risks.
+- **Payment System**: Integration with MiniPay to handle secure and instant payments, supporting multiple Celo-based payment options.
+- **Customer Communication**: Messaging dApps built with XMTP for direct communication between customers and support, automated and manual messaging using Olas for order updates, and customer feedback with proof of purchase using EAS.
+- **Customer Incentives**: Gift cards and subscription models to encourage repeat business, along with a rewards program to incentivize purchases and customer loyalty.
 
-<!-- ABOUT THE PROJECT -->
+## Technology Stack
+### Frontend
+- **Next.js**: For building a dynamic and responsive user interface.
+- **Wagmi or Viem**: For integrating MiniPay and interacting with the Celo blockchain.
 
-## About The Project
+### Backend
+- **Node.js and Express.js**: For creating a scalable and efficient backend.
+- **Solidity**: For writing smart contracts deployed on the Celo network.
 
-Celo Composer allows you to quickly build, deploy, and iterate on decentralized applications using Celo. It provides a number of frameworks, examples, and Celo specific functionality to help you get started with your next dApp.
+### Blockchain
+- **Celo**: For the underlying blockchain infrastructure, providing a decentralized platform for the dApp.
+- **MiniPay**: For the payment gateway, enabling quick and secure transactions.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+## Development Process
+1. **Set Up Development Environment**: Use Celo-Composer to bootstrap the project with Next.js, Hardhat, and Vercel. Set up the necessary tools and frameworks (Node.js, Celo CLI, Wagmi/Viem).
+2. **Develop Smart Contracts**: Write and deploy smart contracts for product management, user authentication, and order processing on the Celo network. Test contracts thoroughly on the Celo testnet.
+3. **Build the Frontend**: Develop a mobile-first interface using Next.js, ensuring a seamless user experience on smartphones. Integrate MiniPay for secure payment processing using Wagmi or Viem.
+4. **Implement Backend Functionality**: Create API endpoints using Node.js and Express.js for handling data interactions. Ensure secure and efficient communication between the frontend and the blockchain.
+5. **Testing and Deployment**: Perform extensive testing of both frontend and backend components. Deploy the smart contracts to the Celo mainnet and the frontend to Vercel. Use Celo’s testnet tokens for testing transactions.
+6. **Documentation and Presentation**: Prepare comprehensive documentation detailing the usage, technology stack, and architecture of the project. Create a demo video showcasing the functionality and user experience of the mobile dApp. Publish the source code in a public GitHub repository.
 
-## Built With
+## Technical Solution
+![Architecture Diagram](path_to_your_architecture_diagram.png)
 
-Celo Composer is built on Celo to make it simple to build dApps using a variety of front-end frameworks, and libraries.
-
-- [Celo](https://celo.org/)
-- [Solidity](https://docs.soliditylang.org/en/v0.8.19/)
-- [Next.js](https://nextjs.org/)
-- [React.js](https://reactjs.org/)
-- [Material UI](https://mui.com/)
-- [React Native](https://reactnative.dev/)
-- [Flutter](https://docs.flutter.dev/)
-- [React-celo](https://github.com/celo-org/react-celo/)
-- [Rainbowkit-celo](https://github.com/celo-org/rainbowkit-celo)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
-
-## Prerequisites
-
-- Node
-- Git (v2.38 or higher)
-
-## How to use Celo Composer
-
-The easiest way to start with Celo Composer is using `@celo/celo-composer`. This CLI tool lets you quickly start building dApps on Celo for multiple frameworks, including React (with either react-celo or rainbowkit-celo), React Native (w/o Expo), Flutter, and Angular. To get started, just run the following command, and follow the steps:
-
-```bash
-npx @celo/celo-composer@latest create
-```
-
-### Front-end framework
-
-![Celo Composer select framework](https://github.com/celo-org/celo-composer/blob/main/images/readme/cc_step_1.png?raw=true)
-
-### Web3 library (for react-app)
-
-![Celo Composer select framework](https://github.com/celo-org/celo-composer/blob/main/images/readme/cc_step_2.png?raw=true)
-
-### Smart contract framework
-
-![Celo Composer tool selection](https://github.com/celo-org/celo-composer/blob/main/images/readme/cc_step_3.png?raw=true)
-
-### Subgraph
-
-![Celo Composer subgraph support](https://github.com/celo-org/celo-composer/blob/main/images/readme/cc_step_4.png?raw=true)
-
-### Name your dApp
-
-![Celo Composer dApp name](https://github.com/celo-org/celo-composer/blob/main/images/readme/cc_step_5.png?raw=true)
-
-**_🔥Voila, you have a dApp ready to go. Voila, you have a dApp ready to go. Start building your dApp on Celo._**
-
-### Getting started
-
-Once your custom dApp has been created, just install dependencies, either with `yarn` or `npm i`, and run the respective script from the `package.json` file.
-## Supported Frameworks
-
-### React
-
-- Support for Website and Progressive Web Application.
-- Works with all major crypto wallets.
-
-Check [package readme](https://github.com/celo-org/celo-composer/blob/main/packages/react-app/README.md) to learn more about.
-
-### React Native
-
-- Out of the box config, just focus on buidl.
-- Support for Android and IOS.
-- Works with and without [Expo](https://expo.dev/).
-- Working example app included.
-
-Check [package readme](https://github.com/celo-org/celo-composer/blob/main/packages/react-native-app/README.md) to learn more about.
-
-### Flutter
-
-- One command to get started - Type `flutter run` to start development in your mobile phone.
-- Works with all major mobile crypto wallets.
-- Support for Android, IOS (Web, Windows, and Linux coming soon).
-- Working example app included.
-
-Check [package readme](https://github.com/celo-org/celo-composer/blob/main/packages/flutter-app/README.md) to learn more about.
-
-### Angular
-
-- Support for Website and Progressive Web Application.
-- Works with all major crypto wallets.
-
-Check [package readme](https://github.com/celo-org/celo-composer/blob/main/packages/angular-app/README.md) to learn more about.
-
-<!-- USAGE EXAMPLES -->
-
-## 🔭 Learning Solidity
-
-📕 Read the docs: <https://docs.soliditylang.org>
-
-- [Primitive Data Types](https://solidity-by-example.org/primitives/)
-- [Mappings](https://solidity-by-example.org/mapping/)
-- [Structs](https://solidity-by-example.org/structs/)
-- [Modifiers](https://solidity-by-example.org/function-modifier/)
-- [Events](https://solidity-by-example.org/events/)
-- [Inheritance](https://solidity-by-example.org/inheritance/)
-- [Payable](https://solidity-by-example.org/payable/)
-- [Fallback](https://solidity-by-example.org/fallback/)
-
-📧 Learn the [Solidity globals and units](https://solidity.readthedocs.io/en/v0.8.19/units-and-global-variables.html)
-
-## Support
-
-Join the Celo Discord server at <https://chat.celo.org>. Reach out on the dedicated repo channel [here](https://discord.com/channels/600834479145353243/941003424298856448).
-
-<!-- ROADMAP -->
+## Challenges
+- **Integration Issues**: Ensuring seamless integration of MiniPay with the frontend and handling blockchain transactions efficiently.
+- **User Experience**: Optimizing the mobile-first design for a wide range of devices and ensuring a smooth user experience.
+- **Security**: Implementing robust security measures for user authentication and transaction processing.
 
 ## Roadmap
+- **Phase 1**: Complete the development of core features, including product listings, shopping cart, checkout, and user authentication.
+- **Phase 2**: Enhance customer communication and order management functionalities.
+- **Phase 3**: Introduce customer incentives, expand the product range, and implement community features.
+- **Phase 4**: Launch the platform, gather user feedback, and iterate based on user insights.
 
-See the [open issues](https://github.com/celo-org/celo-composer/issues) for a full list of proposed features (and known issues).
+## Feedback on Partner Technology
+- **Celo**: The Celo blockchain's fast transactions and low-cost multi-currency gas fees have been instrumental in building an efficient e-commerce platform.
+- **MiniPay**: While MiniPay integration required careful handling, its secure and instant payment processing greatly enhances the user experience.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+## Installation and Usage
+1. **Clone the Repository**: 
+    ```sh
+    git clone https://github.com/your-repo/mobile-it-shop.git
+    cd mobile-it-shop
+    ```
 
-<!-- CONTRIBUTING -->
+2. **Install Dependencies**:
+    ```sh
+    npm install or yarn
+    ```
+
+3. **Compile Smart Contracts**:
+    ```sh
+    npx hardhat compile
+    ```
+
+4. **Deploy Smart Contracts**:
+    ```sh
+    npx hardhat run scripts/deploy.js --network celo
+    ```
+
+5. **Start the Development Server**:
+    ```sh
+    npm run dev
+    ```
 
 ## Contributing
-
-We welcome contributions from the community.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+We welcome contributions from the community. Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
 ## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<!-- CONTACT -->
 ## Contact
-
-- [@CeloDevs](https://twitter.com/CeloDevs)
-- [Discord](https://discord.com/invite/celo)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+For any questions or inquiries, please contact us at skiragu18@gmail.com.
