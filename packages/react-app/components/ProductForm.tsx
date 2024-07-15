@@ -4,7 +4,7 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const CONTRACT_ADDRESS = '0x990546E9AC130bC21d56c6E6EE8D0671a1200CC1';
+const CONTRACT_ADDRESS = '';
 const CONTRACT_ABI = [
   {
     "anonymous": false,
@@ -330,12 +330,15 @@ function ProductForm() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
+    console.log(parseInt(productPrice));
+    console.log(typeof parseInt(productPrice));
+    const parsedPrice = parseInt(productPrice, 10);
+    
     writeContract({
       abi: CONTRACT_ABI,
       address: CONTRACT_ADDRESS,
       functionName: 'createProduct',
-      args: [productName, productDescription, parseInt(productPrice), productImageUrl],
+      args: [productName, productDescription, parsedPrice, productImageUrl],
     });
   };
 

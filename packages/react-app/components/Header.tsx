@@ -21,34 +21,26 @@ export default function Header() {
 
     return (
         <>
-            <Disclosure as="nav" className="bg-white-500 border-b border-black">
+            <Disclosure as="nav" className="bg-white border-b border-black">
                 {({ open }) => (
                     <>
                         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                            <div className="relative flex h-16 justify-between">
+                            <div className="relative flex h-16 justify-between items-center">
                                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                                     {/* Mobile menu button */}
                                     <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-black focus:outline-none focus:ring-1 focus:ring-inset focus:rounded-none focus:ring-black">
-                                        <span className="sr-only">
-                                            Open main menu
-                                        </span>
+                                        <span className="sr-only">Open main menu</span>
                                         {open ? (
-                                            <XMarkIcon
-                                                className="block h-6 w-6"
-                                                aria-hidden="true"
-                                            />
+                                            <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                                         ) : (
-                                            <Bars3Icon
-                                                className="block h-6 w-6"
-                                                aria-hidden="true"
-                                            />
+                                            <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                                         )}
                                     </Disclosure.Button>
                                 </div>
                                 <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                                     <div className="flex flex-shrink-0 items-center">
                                         <Image
-                                            className="block h-8 w-auto sm:block lg:block"
+                                            className="block h-8 w-auto"
                                             src="/logo.svg"
                                             width="24"
                                             height="24"
@@ -74,10 +66,7 @@ export default function Header() {
                                     {!hideConnectBtn && (
                                         <>
                                             <ConnectButton
-                                                showBalance={{
-                                                    smallScreen: true,
-                                                    largeScreen: false,
-                                                }}
+                                                showBalance={{ smallScreen: true, largeScreen: false }}
                                             />
                                             <button
                                                 className="ml-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded"
@@ -98,7 +87,7 @@ export default function Header() {
                                     href="#"
                                     className="block border-l-4 border-black py-2 pl-3 pr-4 text-base font-medium text-black"
                                 >
-                                    Product
+                                    Products
                                 </Disclosure.Button>
                                 <Disclosure.Button
                                     as="a"
@@ -115,7 +104,7 @@ export default function Header() {
 
             {showProductForm && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="bg-white p-6 rounded shadow-lg">
+                    <div className="bg-white p-6 rounded shadow-lg relative">
                         <button
                             className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
                             onClick={() => setShowProductForm(false)}
